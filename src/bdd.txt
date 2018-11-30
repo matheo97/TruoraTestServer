@@ -1,0 +1,21 @@
+cockroach start --insecure --listen-addr=localhost
+
+cockroach sql --insecure --host=localhost:26257
+
+CREATE DATABASE prueba;
+
+CREATE USER IF NOT EXISTS mateo;
+
+GRANT ALL ON DATABASE prueba TO mateo;
+
+GRANT INSERT ON TABLE prueba.* TO mateo;
+
+GRANT SELECT ON TABLE prueba.* TO mateo;
+
+GRANT DELETE ON TABLE prueba.* TO mateo;
+
+GRANT UPDATE ON TABLE prueba.* TO mateo;
+
+CREATE TABLE prueba.recipes(id BIGSERIAL, name TEXT NOT NULL, preptime FLOAT(4) NOT NULL DEFAULT 0.0, difficulty NUMERIC(1) NOT NULL CHECK (difficulty > 0) CHECK (difficulty < 4) DEFAULT 0, vegetarian BOOLEAN NOT NULL DEFAULT false);
+
+CREATE TABLE prueba.recipes(id INT NOT NULL, name TEXT NOT NULL, preptime TEXT NOT NULL, difficulty TEXT NOT NULL, vegetarian TEXT NOT NULL);
