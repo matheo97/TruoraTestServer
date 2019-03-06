@@ -1,10 +1,7 @@
 Truora Test
 
+A RESTful api made in Go with Cockroach DB, What I learned:
 
-RESTful Cockroach and Go
-
-
-Features
-
-uses Gorilla MUX
-uses Pure Go postgres driver
+- use of Gorilla MUX
+- uses of Pure Go Postgres Driver
+- handling http request and sending back responses
